@@ -1,19 +1,10 @@
 {
-  "name": "typewise",
+  "name": "typewiselite",
   "version": "0.7.0",
   "description": "Typewise structured sorting for arbirarily complex data structures",
   "main": "typewise.js",
   "dependencies": {
     "bops": "~0.0"
-  },
-  "optionalDependencies": {
-    "ses": "~0.0",
-    "esprima": "~1",
-    "escodegen": "~0.0",
-    "buffertools": "~1"
-  },
-  "browser": {
-    "./ses": false
   },
   "devDependencies": {
     "tape": "~1.0.4"
