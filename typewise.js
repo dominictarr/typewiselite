@@ -1,7 +1,5 @@
 'use strict';
 
-var bops = require('bops');
-
 var typewise = exports;
 
 function getValue(source) {
@@ -63,7 +61,7 @@ typewise.equal = function(a, b) {
 function bytewiseCompare(a, b) {
   var result;
   for (var i = 0, length = Math.min(a.length, b.length); i < length; i++) {
-    result = bops.readUInt8(a, i) - bops.readUInt8(b, i);
+    result = a.readUInt8(i) - b.readUInt8(i);
     if (result) return result;
   }
   return a.length - b.length;
@@ -142,7 +140,7 @@ var types = typewise.types = {
   },
 
   binary: {
-    is: bops.is,
+    is: Buffer.isBuffer,
     compare: comparators.bytewise
   },
 
@@ -192,5 +190,3 @@ var types = typewise.types = {
 
 };
 
-
-if (process.title != 'browser') require('./ses')(types);
