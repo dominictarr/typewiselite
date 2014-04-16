@@ -85,17 +85,9 @@ var comparators = typewise.comparators = {
   }
 };
 
-// Attempt to use the fast native version in buffertools
-try {
-  require('buffertools').compare;
-  comparators.bytewise = function(a, b) {
-    // Bypass buffertools compare if lengths differ
-    if (a.length !== b.length) return bytewiseCompare(a, b);
-    return a.compare(b);
-  }
+comparators.bytewise = function(a, b) {
+  return bytewiseCompare(a, b);
 }
-catch (e) {}
-
 
 // Type System
 // TODO eq, gt, lt, gte, lte
