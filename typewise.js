@@ -7,7 +7,6 @@ function getValue(source) {
 }
 
 var typeOrder = [
-  'undefined',
   'null',
   'boolean',
   'number',
@@ -17,7 +16,7 @@ var typeOrder = [
   'array',
   'object',
   'regexp',
-  'function'
+  'undefined'
 ];
 
 var compare = typewise.compare = function(aSource, bSource) {
