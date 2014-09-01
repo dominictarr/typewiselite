@@ -1,20 +1,16 @@
 {
   "name": "typewiselite",
   "version": "0.7.1",
-  "description": "Typewise structured sorting for arbirarily complex data structures",
-  "main": "typewise.js",
-  "dependencies": {
-    "bops": "~0.0"
-  },
+  "description": "comparison for sensible javascript objects",
   "devDependencies": {
-    "tape": "~1.0.4"
+    "tape": "~2.14.0"
   },
   "scripts": {
-    "test": "tap test/"
+    "test": "node test/compare.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/deanlandolt/typewise.git"
+    "url": "https://github.com/dominictarr/typewiselite.git"
   },
   "keywords": [
     "sort",
