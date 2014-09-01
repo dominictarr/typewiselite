@@ -1,23 +1,29 @@
 'use strict';
 
-var typewise = require('../typewise');
+var typewise = require('../');
 var util = require('./util');
 var tape = require('tape');
 
-tape('simple', function (t) {
-  try {
-    var sample = util.getSample();
-    var shuffled = util.shuffle(sample.slice());
-    typewise.equal(sample, shuffled.sort(typewise.compare));
-    t.deepEqual(sample, shuffled.sort(typewise.compare));
-    var sample = util.getArraySample(2);
-    var shuffled = util.shuffle(sample.slice());
-    typewise.equal(sample, shuffled.sort(typewise.compare));
-    t.deepEqual(sample, shuffled.sort(typewise.compare));
-  }
-  catch (err) {
-    t.notOk(err);
-    console.log(err.stack || err);
-  }
+tape('flat', function (t) {
+  var sample = util.getSample();
+  var shuffled = util.shuffle(sample.slice());
+  t.deepEqual(shuffled.sort(typewise), sample)
   t.end()
 })
+
+
+tape('arrays', function (t) {
+  var sample = util.getArraySample(1);
+  var shuffled = util.shuffle(sample.slice());
+  t.deepEqual(shuffled.sort(typewise), sample);
+  t.end()
+})
+
+tape('nested arrays', function (t) {
+  var sample = util.getArraySample(2);
+  var shuffled = util.shuffle(sample.slice());
+  t.deepEqual(shuffled.sort(typewise), sample);
+  t.end()
+})
+
+

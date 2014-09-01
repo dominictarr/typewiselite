@@ -1,7 +1,5 @@
 'use strict';
 
-var bops = require('bops');
-
 var util = exports;
 var MAX_INTEGER = 9007199254740991;
 var EPSILON = 2.220446049250313e-16;
@@ -46,25 +44,16 @@ var samples = {
     MAX_INTEGER,
     Number.POSITIVE_INFINITY
   ],
-  date: [
-    new Date(-1),
-    new Date(-0),
-    new Date(0),
-    new Date(1),
-    new Date('2001-09-09T01:46:39.999Z'),
-    new Date(1000000000000),
-    new Date('2001-09-09T01:46:40.001Z')
-  ],
   buffer: [
-    bops.create([]),
-    bops.create([ 0 ]),
-    bops.create([ 0, 0 ]),
-    bops.create([ 0, 1 ]),
-    bops.create([ 1, 0 ]),
-    bops.create([ 1, 1 ]),
-    bops.create([ 255 ]),
-    bops.create([ 255, 0 ]),
-    bops.create([ 255, 255 ])
+    new Buffer([]),
+    new Buffer([ 0 ]),
+    new Buffer([ 0, 0 ]),
+    new Buffer([ 0, 1 ]),
+    new Buffer([ 1, 0 ]),
+    new Buffer([ 1, 1 ]),
+    new Buffer([ 255 ]),
+    new Buffer([ 255, 0 ]),
+    new Buffer([ 255, 255 ])
   ],
   string: [
     '',
