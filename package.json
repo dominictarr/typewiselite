@@ -1,6 +1,6 @@
 {
   "name": "typewiselite",
-  "version": "0.7.1",
+  "version": "1.0.0",
   "description": "comparison for sensible javascript objects",
   "devDependencies": {
     "tape": "~2.14.0"
